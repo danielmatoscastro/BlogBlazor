@@ -1,0 +1,29 @@
+﻿@page "/"
+@using Blog.Models
+@using Blog.Repositories.Abstractions
+
+@inject IPostsRepository PostsRepository;
+
+<PageTitle>Home</PageTitle>
+
+<h1>Este é um blog.</h1>
+
+<nav>
+    <ul>
+        @foreach (var post in posts)
+        {
+            <li>
+                @post.Title;
+            </li>
+        }
+    </ul>
+</nav>
+
+@code {
+    private IEnumerable<Post>? posts = [];
+
+    protected override async Task OnInitializedAsync()
+    {
+        posts = await PostsRepository.GetAll();
+    }
+}
