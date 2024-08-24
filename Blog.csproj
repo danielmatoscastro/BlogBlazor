@@ -10,4 +10,11 @@
     <PackageReference Include="MongoDB.Driver" Version="2.28.0" />
   </ItemGroup>
 
+  <Target Name="Tailwind" BeforeTargets="Compile">
+    <Exec Command="npx tailwindcss -i ./wwwroot/tailwind/tailwind.css -o ./wwwroot/tailwind/tailwind-output.css" />
+  </Target>
+
+  <ItemGroup>
+    <Watch Include="./wwwroot/tailwind/tailwind.css" />
+  </ItemGroup>
 </Project>

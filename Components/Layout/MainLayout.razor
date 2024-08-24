@@ -1,14 +1,27 @@
 ﻿@inherits LayoutComponentBase
 
-<div class="page">
-    <div class="sidebar">
-        <NavMenu />
-    </div>
-
-    <main>
-        <article class="content px-4">
-            @Body
-        </article>
+<div class="page flex-1 justify-center items-center">
+    <main class="w-10/12">
+        <header class="flex">
+            <h1 class="text-2xl">
+                Daniel Blog
+            </h1>
+            <nav>
+                <ul class="">
+                    <li class="inline">
+                        <NavLink href="/">Posts</NavLink>
+                    </li>
+                    <li class="inline">
+                        <NavLink href="/sobre">Sobre</NavLink>
+                    </li>
+                    <li class="inline">
+                        <NavLink href="/contato">Contato</NavLink>
+                    </li>
+                </ul>
+                <li></li>
+            </nav>
+        </header>
+        @Body
     </main>
 </div>
 
